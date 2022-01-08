@@ -27,7 +27,7 @@
     "license": "MIT",
     "repository": "Lee HIldebrand/Quotes",
     "scripts": {
-        "build": "lwc-services build -m production",
+        "build": "lwc-services --openssl-legacy-provider build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "postinstall": "husky install",
