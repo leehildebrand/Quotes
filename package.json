@@ -53,7 +53,7 @@
     },
     "repository": "adityanaag3/my-expressapp",
     "scripts": {
-        "build": "lwc-services build -m production",
+        "build": "lwc-services build --openssl-legacy-provider -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
