@@ -1,24 +1,15 @@
 import { LightningElement, api } from 'lwc';
 
 const greetings = [
-    'Hello',
-    'Bonjour',
-    '你好',
-    'Hola',
-    'Привет',
-    'こんにちは',
-    'Guten Tag',
-    'ጤና ይስጥልኝ',
-    'Ciao',
-    'नमस्ते',
-    '안녕하세요'
+    'Little by little, one traveles far. - Tolkien',
+    'If you want to go fast, go alone. If you want to go far, go together. - Confucius'
 ];
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
     fast: 'fade-fast',
     medium: 'fade-medium'
 };
-const DEFAULT_SPEED = 'medium';
+const DEFAULT_SPEED = 'slow';
 
 export default class Greeting extends LightningElement {
     animationSpeed = DEFAULT_SPEED;
