@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 
 const greetings = [
     'Little by little, one traveles far. - Tolkien',
-    'If you want to go fast, go alone. If you want to go far, go together. - Confucius'
+    'If you want to go fast, go alone. If you want to go far, go together.'
 ];
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
