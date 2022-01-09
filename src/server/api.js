@@ -28,6 +28,17 @@ app.use(compression());
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 3002;
+const DIST_DIR = './dist';
+
+app.use(express.static(DIST_DIR));
+
+app.use(/^(?!\/api).+/, (req, res) => {
+    res.sendFile(path.resolve(DIST_DIR, 'index.html'));
+});
+
+app.get('/api/v1/endpoint', (req, res) => {
+    res.json({ success: true });
+});
 
 app.get('/api/quotes', (req, res) => {
     const soql = `SELECT Text__c FROM Quote__c`;
