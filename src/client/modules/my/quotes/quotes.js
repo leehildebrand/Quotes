@@ -1,28 +1,33 @@
 import { LightningElement, api } from 'lwc';
+//make the quotes available to the component
 import { getQuotes } from 'data/quoteService';
 
-var greetings = ['Gathering quotes...'];
+//since the app has to load, we show a brief while the quotes are loading
+var quotes = ['Gathering quotes...'];
 
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
     fast: 'fade-fast',
     medium: 'fade-medium'
 };
-const DEFAULT_SPEED = 'slow';
+
+//TO-DO: make speed configurable in custom metadata
+var DEFAULT_SPEED = 'slow';
 
 export default class Greeting extends LightningElement {
-    quotes = [];
+    // Get the quotes
     connectedCallback() {
         getQuotes().then(result => {
-            greetings = [];
+            //clear the loading message
+            quotes = [];
+            //add the quotes to the array
             this.quotes = this.allQuotes = result;
-            console.log(this.quotes);
             this.quotes.forEach(element => {
-                greetings.push(element.Text);
+                quotes.push(element.Text);
             });
-            console.log(greetings);
         });
     }
+
     animationSpeed = DEFAULT_SPEED;
     index = 0;
     isAnimating = true;
@@ -42,9 +47,9 @@ export default class Greeting extends LightningElement {
         return this.animationSpeed;
     }
 
-    // Get the current greeting
-    get greeting() {
-        return greetings[this.index];
+    // Get the current quote
+    get quote() {
+        return quotes[this.index];
     }
 
     // Map slow, medium, fast to CSS Animations
@@ -58,12 +63,12 @@ export default class Greeting extends LightningElement {
     //Handle the animation ending, update to next hello
     handleAnimationEnd() {
         this.isAnimating = false;
-        this.index = (this.index + 1) % greetings.length;
+        this.index = (this.index + 1) % quotes.length;
 
         setTimeout(() => this.updateGreeting(), 500);
     }
 
-    // Update to the next greeting and start animating
+    // Update to the next quote and start animating
     updateGreeting() {
         this.isAnimating = true;
     }

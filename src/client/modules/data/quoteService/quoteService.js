@@ -1,21 +1,19 @@
+//give our API an endpoint
 const URL = '/api/quotes';
 
-let sessions = [];
+let quotes = [];
 
+//get quotes from Salesforce
 export const getQuotes = () => fetch(URL)
     .then(response => {
         if (!response.ok) {
+            // If response was not OK, throw error
             throw new Error('No response from server');
         }
         return response.json();
     })
     .then(result => {
-        sessions = result.data;
-        return sessions;
+        // If successful, return the quotes
+        quotes = result.data;
+        return quotes;
     });
-
-export const getQuote = sessionId => {
-    return sessions.find(session => {
-        return session.id === sessionId;
-    });
-}
