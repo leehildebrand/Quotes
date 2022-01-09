@@ -47,8 +47,8 @@ export default class Greeting extends LightningElement {
         return this.animationSpeed;
     }
 
-    // Get the current greeting
-    get greeting() {
+    // Get the current quote
+    get quote() {
         return quotes[this.index];
     }
 
@@ -68,7 +68,7 @@ export default class Greeting extends LightningElement {
         setTimeout(() => this.updateGreeting(), 500);
     }
 
-    // Update to the next greeting and start animating
+    // Update to the next quote and start animating
     updateGreeting() {
         this.isAnimating = true;
     }
