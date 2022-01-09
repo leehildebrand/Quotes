@@ -26,8 +26,8 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 
-const HOST = '0.0.0.0';
-const PORT = process.env.API_PORT || 3002;
+const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 3002;
 
 app.get('/api/quotes', (req, res) => {
     const soql = `SELECT Text__c FROM Quote__c`;
