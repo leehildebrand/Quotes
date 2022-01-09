@@ -22,6 +22,24 @@ app.get('/api/v1/endpoint', (req, res) => {
     res.json({ success: true });
 });
 
+app.get('/api/quotes', (req, res) => {
+    const soql = `SELECT Text__c FROM Quote__c`;
+    conn.query(soql, (err, result) => {
+        if (err) {
+            res.sendStatus(500);
+        } else if (result.records.length === 0) {
+            res.status(404).send('Session not found.');
+        } else {
+            const formattedData = result.records.map(quoteRecord => {
+                return {
+                    Text: quoteRecord.Text__c
+                };
+            });
+            res.send({ data: formattedData });
+        }
+    });
+});
+
 app.listen(PORT, () =>
     console.log(
         `✅  API Server started: http://${HOST}:${PORT}/api/v1/endpoint`
