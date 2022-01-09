@@ -1,9 +1,8 @@
 import { LightningElement, api } from 'lwc';
+import { getQuotes } from 'data/quoteService';
 
-const greetings = [
-    'Little by little, one traveles far. - Tolkien',
-    'If you want to go fast, go alone. If you want to go far, go together.'
-];
+var greetings = ['Gathering quotes...'];
+
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
     fast: 'fade-fast',
@@ -12,6 +11,18 @@ const SPEED_CLASS_MAP = {
 const DEFAULT_SPEED = 'slow';
 
 export default class Greeting extends LightningElement {
+    quotes = [];
+    connectedCallback() {
+        getQuotes().then(result => {
+            greetings = [];
+            this.quotes = this.allQuotes = result;
+            console.log(this.quotes);
+            this.quotes.forEach(element => {
+                greetings.push(element.Text);
+            });
+            console.log(greetings);
+        });
+    }
     animationSpeed = DEFAULT_SPEED;
     index = 0;
     isAnimating = true;
