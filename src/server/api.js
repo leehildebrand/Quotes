@@ -47,10 +47,6 @@ app.get('/api/quotes', (req, res) => {
     });
 });
 
-app.get('/', (req, res) => {
-    return 'Test';
-});
-
 app.listen(PORT, () =>
     console.log(
         `✅  API Server started: http://${HOST}:${PORT}/api/v1/endpoint`
