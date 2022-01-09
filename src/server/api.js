@@ -26,7 +26,7 @@ const app = express();
 app.use(helmet());
 app.use(compression());
 
-const HOST = process.env.API_HOST || 'localhost';
+const HOST = '0.0.0.0';
 const PORT = process.env.API_PORT || 3002;
 
 app.get('/api/quotes', (req, res) => {
