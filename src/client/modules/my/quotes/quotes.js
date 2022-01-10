@@ -14,7 +14,7 @@ const SPEED_CLASS_MAP = {
 //TO-DO: make speed configurable in custom metadata
 var DEFAULT_SPEED = 'slow';
 
-export default class Greeting extends LightningElement {
+export default class Quote extends LightningElement {
     // Get the quotes
     connectedCallback() {
         getQuotes().then(result => {
@@ -87,7 +87,6 @@ export default class Greeting extends LightningElement {
 
     handlePrevious() {
         this.index = (this.index - 1) % quotes.length;
-        console.log(this.index);
     }
 
     handlePause() {
