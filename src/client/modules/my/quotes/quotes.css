@@ -2,6 +2,30 @@
     font-size: xx-large;
 }
 
+.nextButton {
+    margin-top: 10px;
+    position: fixed;
+    left: 100%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.previousButton{
+    margin-top: 10px;
+    position: fixed;
+    right: 100%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.pauseButton{
+    margin-top: 10px;
+    position: fixed;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .fade-fast {
     opacity: 0;
     animation: fade-in 1s;
