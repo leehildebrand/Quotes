@@ -95,12 +95,11 @@ export default class Greeting extends LightningElement {
             this.isAnimating = false;
             this.pause = true;
             this.pauseButtonText = '>';
-            //            console.log(this.quotes[this.index]);
-
         } else {
             this.isAnimating = true;
             this.pause = false;
             this.pauseButtonText = '||';
+            this.index = (this.index - 1) % quotes.length;
         }
     }
 }
