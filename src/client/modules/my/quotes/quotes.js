@@ -31,6 +31,7 @@ export default class Greeting extends LightningElement {
     animationSpeed = DEFAULT_SPEED;
     index = 0;
     isAnimating = true;
+    pause = false;
     nextButtonText = 'Next';
     previousButtonText = 'Previous';
     pauseButtonText = '||';
@@ -59,6 +60,9 @@ export default class Greeting extends LightningElement {
     get animationClass() {
         if (this.isAnimating) {
             return SPEED_CLASS_MAP[this.speed];
+        }
+        else if (this.pause) {
+            return 'fade-pause';
         }
         return 'hide';
     }
@@ -89,9 +93,13 @@ export default class Greeting extends LightningElement {
     handlePause() {
         if (this.isAnimating) {
             this.isAnimating = false;
+            this.pause = true;
             this.pauseButtonText = '>';
+            //            console.log(this.quotes[this.index]);
+
         } else {
             this.isAnimating = true;
+            this.pause = false;
             this.pauseButtonText = '||';
         }
     }
