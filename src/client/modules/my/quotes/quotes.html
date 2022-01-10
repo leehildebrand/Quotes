@@ -2,4 +2,19 @@
     <div class={animationClass} onanimationend={handleAnimationEnd}>
         <span class="quote">{quote}</span>
     </div>
+    <div>
+        <button class="nextButton" onclick={handleNext}>
+            {nextButtonText}
+        </button>
+    </div>
+    <div>
+        <button class="pauseButton" onclick={handlePause}>
+            {pauseButtonText}
+        </button>
+    </div>
+    <div>
+        <button class="previousButton" onclick={handlePrevious}>
+            {previousButtonText}
+        </button>
+    </div>
 </template>

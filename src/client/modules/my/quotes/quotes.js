@@ -31,6 +31,9 @@ export default class Greeting extends LightningElement {
     animationSpeed = DEFAULT_SPEED;
     index = 0;
     isAnimating = true;
+    nextButtonText = 'Next';
+    previousButtonText = 'Previous';
+    pauseButtonText = '||';
 
     @api
     set speed(value) {
@@ -71,5 +74,25 @@ export default class Greeting extends LightningElement {
     // Update to the next quote and start animating
     updateGreeting() {
         this.isAnimating = true;
+    }
+
+    handleNext() {
+        this.index = (this.index + 1) % quotes.length;
+        console.log(this.index);
+    }
+
+    handlePrevious() {
+        this.index = (this.index - 1) % quotes.length;
+        console.log(this.index);
+    }
+
+    handlePause() {
+        if (this.isAnimating) {
+            this.isAnimating = false;
+            this.pauseButtonText = '>';
+        } else {
+            this.isAnimating = true;
+            this.pauseButtonText = '||';
+        }
     }
 }
