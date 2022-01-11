@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="actions">
-      <template if:true="{loggedUser}">
+      <template if:true={loggedUser}>
         <br />
         <a href="/oauth2/logout">
           <button type="button" class="brand">Log Out</button>
@@ -10,10 +10,10 @@
     </div>
   </header>
   <main class="content">
-    <template if:true="{isLoginView}">
+    <template if:true={isLoginView}>
       <my-login-view></my-login-view>
     </template>
-    <template if:true="{isSessionListView}">
+    <template if:true={isSessionListView}>
       <my-session-list></my-session-list>
     </template>
   </main>
