@@ -1,30 +1,32 @@
 {
-    "name": "my-expressapp",
-    "description": "My amazing LWC app",
+    "name": "conference-app",
+    "description": "Sample Code for connecting to Salesforce using OAuth Web Server flow from an LWC OSS App",
     "version": "0.0.1",
     "author": "adityanaag3",
-    "bugs": "https://github.com/adityanaag3/my-expressapp/issues",
+    "bugs": "https://github.com/adityanaag3/lwc-oss-oauth/issues",
     "dependencies": {
         "compression": "^1.7.4",
-        "dotenv": "^10.0.0",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "helmet": "^4.1.1",
-        "jsforce": "^1.11.0"
+        "express-session": "^1.17.1",
+        "helmet": "^3.23.3",
+        "jsforce": "^1.10.1",
+        "winston": "^3.3.3"
     },
     "devDependencies": {
-        "eslint": "^7.11.0",
-        "husky": "^4.3.0",
-        "lint-staged": "^10.4.0",
-        "lwc-services": "^2.2.2",
+        "eslint": "^7.20.0",
+        "husky": "^4.3.8",
+        "lint-staged": "^10.5.4",
+        "lwc-services": "^3.0.4",
         "npm-run-all": "^4.1.5",
-        "prettier": "^2.1.2"
+        "prettier": "^2.2.1"
     },
     "engines": {
         "node": ">=10.13.0",
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/adityanaag3/my-expressapp",
+    "homepage": "https://github.com/adityanaag3/lwc-oss-oauth",
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
@@ -53,14 +55,14 @@
         ],
         "exec": "node ./src/server/api.js"
     },
-    "repository": "adityanaag3/my-expressapp",
+    "repository": "adityanaag3/lwc-oss-oauth",
     "scripts": {
-        "build": "lwc-services --openssl-legacy-provider build -m production",
+        "build": "lwc-services build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
-        "serve": "node src/server/api.js",
+        "serve": "run-p serve:client serve:api",
         "serve:api": "node src/server/api.js",
         "serve:client": "node scripts/server.js",
         "test:unit": "lwc-services test:unit",
