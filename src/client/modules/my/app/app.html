@@ -1,24 +1,23 @@
 <template>
-    <header>
-        <div class="actions">
-            <template if:true={loggedUser}>
-                <span class="user-display-name">{loggedUser.display_name}</span>
-                <br />
-                <a href="/oauth2/logout">
-                    <button type="button" class="brand">Log Out</button>
-                </a>
-            </template>
-        </div>
-    </header>
-    <main class="content">
-        <template if:true={isLoginView}>
-            <my-login-view></my-login-view>
-        </template>
-        <template if:true={isSessionListView}>
-            <my-session-list></my-session-list>
-        </template>
-    </main>
-    <div class="quote">
-        <my-quotes speed="slow"></my-quotes>
+  <header>
+    <div class="actions">
+      <template if:true="{loggedUser}">
+        <br />
+        <a href="/oauth2/logout">
+          <button type="button" class="brand">Log Out</button>
+        </a>
+      </template>
     </div>
+  </header>
+  <main class="content">
+    <template if:true="{isLoginView}">
+      <my-login-view></my-login-view>
+    </template>
+    <template if:true="{isSessionListView}">
+      <my-session-list></my-session-list>
+    </template>
+  </main>
+  <div class="quote">
+    <my-quotes speed="slow"></my-quotes>
+  </div>
 </template>
