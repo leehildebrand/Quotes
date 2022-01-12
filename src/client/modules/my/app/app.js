@@ -1,5 +1,6 @@
 import { LightningElement, track } from 'lwc';
 import { getLoggedInUser } from 'data/authService';
+import { routeMeTo } from 'my/routerModule';
 
 export default class App extends LightningElement {
     @track loggedUser = undefined;
@@ -23,6 +24,10 @@ export default class App extends LightningElement {
 
     get isSessionListView() {
         return this.state === 'list';
+    }
+
+    goToList() {
+        routeMeTo('sessionList');
     }
 }
 ``
