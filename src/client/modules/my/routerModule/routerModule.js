@@ -197,10 +197,8 @@ export default class RouterModule extends LightningElement {
 
         //below runs for c-router-module registrar components
         if (this.registerPage || this.isDefault) {
-            console.log(registeredPages);
             registerRoute(this.registerPage);
         }
-        console.log(registeredPages);
     }
 
     /*

@@ -167,6 +167,29 @@ app.get('/api/quotes', (req, res) => {
     });
 });
 
+var _request = {
+    url: '/services/data/v53.0',
+    method: 'get',
+    body: '',
+    headers: {
+        "Content-Type": "application/json"
+    }
+};
+
+conn.login(SF_USERNAME, SF_PASSWORD + SF_TOKEN, function (err, userInfo) {
+    if (err) { return console.error(err); }
+    console.log('Access Token: ' + conn.accessToken);
+    console.log('Instance URL: ' + conn.instanceUrl);
+    console.log("User ID: " + userInfo.id);
+    console.log("Org ID: " + userInfo.organizationId);
+});
+
+app.get('/api/image', (req, res) => {
+    conn.request(_request, function (err, resp) {
+        console.log(resp);
+    });
+});
+
 app.listen(PORT, () =>
     console.log(
         `✅  API Server started: http://${HOST}:${PORT}/api/v1/endpoint`
