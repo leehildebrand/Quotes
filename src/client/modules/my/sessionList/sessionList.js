@@ -1,5 +1,7 @@
 import { LightningElement } from 'lwc';
 import { getSessions } from 'data/sessionService';
+import { routeMeTo } from 'my/routerModule';
+
 export default class SessionList extends LightningElement {
     sessions = [];
     connectedCallback() {
@@ -11,7 +13,11 @@ export default class SessionList extends LightningElement {
     handleSearchKeyInput(event) {
         const searchKey = event.target.value.toLowerCase();
         this.sessions = this.allSessions.filter((session) =>
-            session.name.toLowerCase().includes(searchKey)
+            session.text.toLowerCase().includes(searchKey)
         );
+    }
+
+    goToHome() {
+        routeMeTo('home');
     }
 }

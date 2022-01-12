@@ -1,25 +1,17 @@
 <template>
     <div class="list">
-        <input
-            type="search"
-            placeholder="Search sessions..."
-            oninput={handleSearchKeyInput}
-        />
+        <input type="search" placeholder="Search quotes..." oninput={handleSearchKeyInput} />
+        <button class="slds-button slds-button_outline-brand" onclick={goToHome} type="submit">
+            Scroll
+        </button>
         <template for:each={sessions} for:item="session" for:index="index">
             <div key={session.id} class="session">
                 <div>
-                    <p class="title">{session.name}</p>
-                    <p class="icon time">{session.dateTime}</p>
-                    <p class="icon room">{session.room}</p>
+                    <p class="title">{session.text}</p>
                 </div>
                 <div class="speaker-pictures">
                     <template for:each={session.speakers} for:item="speaker">
-                        <img
-                            key={speaker.id}
-                            src={speaker.pictureUrl}
-                            alt={speaker.name}
-                            title={speaker.name}
-                        />
+                        <img key={speaker.id} src={speaker.pictureUrl} alt={speaker.name} title={speaker.name} />
                     </template>
                 </div>
             </div>

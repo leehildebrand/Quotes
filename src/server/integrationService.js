@@ -57,7 +57,7 @@ module.exports = class IntegrationService {
         } else {
             // Retrieve all sessions
             // In production, this should be paginated
-            soqlQuery = 'SELECT Id, Name, Date_and_Time__c FROM Session__c';
+            soqlQuery = 'SELECT Id, Name, Text__c FROM Quote__c';
         }
 
         // Execute query and respond with result or error
@@ -84,10 +84,7 @@ module.exports = class IntegrationService {
                     return {
                         id: sessionRecord.Id,
                         name: sessionRecord.Name,
-                        dateTime: sessionRecord.formattedDateTime,
-                        room: sessionRecord.Room__c,
-                        description: sessionRecord.Description__c,
-                        speakers
+                        text: sessionRecord.Text__c
                     };
                 });
 
