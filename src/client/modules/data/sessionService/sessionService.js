@@ -5,7 +5,8 @@ export const getSessions = () =>
     fetch(URL)
         .then((response) => {
             if (!response.ok) {
-                throw new Error('No response from server');
+                if (window.location.search != '?page=home')
+                    throw new Error('No response from server');
             }
             return response.json();
         })

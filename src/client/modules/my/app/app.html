@@ -13,11 +13,11 @@
     <template if:true={isLoginView}>
       <my-login-view></my-login-view>
     </template>
-    <template if:true={isSessionListView}>
-      <my-session-list></my-session-list>
-    </template>
   </main>
   <div class="quote">
     <my-quotes speed="slow"></my-quotes>
   </div>
+  <button class="slds-button slds-button_outline-brand" onclick={goToList} type="submit">
+    List
+  </button>
 </template>
