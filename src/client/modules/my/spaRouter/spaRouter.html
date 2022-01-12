@@ -1,0 +1,21 @@
+<template>
+
+    <my-router-module>
+        <!--root my-router-module component , should be created only once-->
+
+        <!--
+            registrar my-router-module components
+            should register all pages at once
+        -->
+        <my-router-module register-page="home" is-default="true">
+            <my-app></my-app>>
+            <!-- component that represents a page -->
+        </my-router-module>
+        <my-router-module register-page="quotes">
+            <my-quotes></my-quotes> <!-- component that represents a page -->
+        </my-router-module>
+
+
+    </my-router-module>
+
+</template>
