@@ -2,8 +2,8 @@ import { LightningElement, api } from 'lwc';
 //make the quotes available to the component
 import { getQuotes } from 'data/quoteService';
 
-//since the app has to load, we show a brief while the quotes are loading
-var quotes = ['Gathering quotes...'];
+//since the app has to load, we show a brief message while the quotes are loading
+var quotes = [{ Text: 'Gathering Quotes', Picture: '' }];
 
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
