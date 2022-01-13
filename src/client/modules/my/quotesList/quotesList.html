@@ -1,13 +1,16 @@
 <template>
   <div class="listButton">
-    <button onclick="{goToHome}" type="submit">Scroll</button>
+    <button onclick={goToHome} type="submit">Scroll</button>
   </div>
   <div>
-    <template for:each="{quotes}" for:item="quote">
-      <p class="quoteList" key="{quote.Id}">{quote.Text}</p>
+    <template for:each={quotes} for:item="quote">
+      <p key={quote.Id}>{quote.Text}</p>
+      <template if:true={quote.Picture}>
+        <img key={quote.Id} src={quote.Picture} alt={quote.Text}>
+      </template>
     </template>
   </div>
   <div class="listButton">
-    <button onclick="{goToHome}" type="submit">Scroll</button>
+    <button onclick={goToHome} type="submit">Scroll</button>
   </div>
 </template>

@@ -14,6 +14,8 @@ const SPEED_CLASS_MAP = {
 //TO-DO: make speed configurable in custom metadata
 var DEFAULT_SPEED = 'slow';
 
+var currentQuote = {};
+
 export default class Quote extends LightningElement {
     // Get the quotes
     connectedCallback() {
@@ -23,7 +25,8 @@ export default class Quote extends LightningElement {
             //add the quotes to the array
             this.quotes = this.allQuotes = result;
             this.quotes.forEach(element => {
-                quotes.push(element.Text);
+                currentQuote = { Text: element.Text, Picture: element.Picture };
+                quotes.push(currentQuote);
             });
         });
     }

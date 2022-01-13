@@ -1,9 +1,11 @@
 <template>
     <div class={animationClass} onanimationend={handleAnimationEnd}>
-        <span class="quote">{quote}</span>
-    </div>
-    <div>
-        <my-image></my-image>
+        <template if:true={quote.Picture}>
+            <img src={quote.Picture} alt={quote.Text}>
+        </template>
+        <template if:false={quote.Picture}>
+            <span class="quote">{quote.Text}</span>
+        </template>
     </div>
     <div>
         <button class="nextButton" onclick={handleNext}>
