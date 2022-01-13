@@ -57,7 +57,7 @@
     },
     "repository": "adityanaag3/lwc-oss-oauth",
     "scripts": {
-        "build": "lwc-services build -m production",
+        "build": "lwc-services --openssl-legacy-provider build -m production",
         "build:development": "lwc-services build",
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
