@@ -1,12 +1,13 @@
 <template>
-    <div class="listButton">
-        <button class="slds-button slds-button_outline-brand" onclick={goToHome} type="submit">
-            View as List
-        </button>
-    </div>
-    <div>
-        <template for:each={quotes} for:item="quote">
-            <p key={quote.Id}>{quote.Text}</p>
-        </template>
-    </div>
+  <div class="listButton">
+    <button onclick="{goToHome}" type="submit">Scroll</button>
+  </div>
+  <div>
+    <template for:each="{quotes}" for:item="quote">
+      <p class="quoteList" key="{quote.Id}">{quote.Text}</p>
+    </template>
+  </div>
+  <div class="listButton">
+    <button onclick="{goToHome}" type="submit">Scroll</button>
+  </div>
 </template>
