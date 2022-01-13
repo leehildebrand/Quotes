@@ -1,19 +1,4 @@
 <template>
-  <header>
-    <div class="actions">
-      <template if:true={loggedUser}>
-        <br />
-        <a href="/oauth2/logout">
-          <button type="button" class="brand">Log Out</button>
-        </a>
-      </template>
-    </div>
-  </header>
-  <main class="content">
-    <template if:true={isLoginView}>
-      <my-login-view></my-login-view>
-    </template>
-  </main>
   <div class="quote">
     <my-quotes speed="slow"></my-quotes>
     <div class="listButton">
