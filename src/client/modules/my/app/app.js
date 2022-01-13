@@ -27,7 +27,7 @@ export default class App extends LightningElement {
     }
 
     goToList() {
-        routeMeTo('sessionList');
+        routeMeTo('quotesList');
     }
 }
 ``
