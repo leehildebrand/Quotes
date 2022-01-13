@@ -150,7 +150,7 @@ app.get('/api/v1/endpoint', (req, res) => {
 });
 
 app.get('/api/quotes', (req, res) => {
-    const soql = `SELECT Id,Text__c FROM Quote__c ORDER BY Order__c`;
+    const soql = `SELECT Id,Text__c,Picture__c FROM Quote__c ORDER BY Order__c`;
     conn.query(soql, (err, result) => {
         if (err) {
             res.sendStatus(500);
@@ -160,7 +160,8 @@ app.get('/api/quotes', (req, res) => {
             const formattedData = result.records.map(quoteRecord => {
                 return {
                     Id: quoteRecord.Id,
-                    Text: quoteRecord.Text__c
+                    Text: quoteRecord.Text__c,
+                    Picture: quoteRecord.Picture__c
                 };
             });
             res.send({ data: formattedData });
