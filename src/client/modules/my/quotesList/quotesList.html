@@ -1,10 +1,12 @@
 <template>
+    <div class="listButton">
+        <button class="slds-button slds-button_outline-brand" onclick={goToHome} type="submit">
+            View as List
+        </button>
+    </div>
     <div>
         <template for:each={quotes} for:item="quote">
-
-            {quote.Text}
-
+            <p key={quote.Id}>{quote.Text}</p>
         </template>
-
     </div>
 </template>
