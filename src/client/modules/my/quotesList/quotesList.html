@@ -8,7 +8,7 @@
         <p key={quote.Id}>{quote.Text}</p>
       </template>
       <template if:true={quote.Picture}>
-        <img key={quote.Id} src={quote.PicSrc} alt={quote.Text}>
+        <img key={quote.Id} src={quote.PicSrc} alt={quote.Text} width="75%" height="75%">
       </template>
     </template>
   </div>
