@@ -4,9 +4,11 @@
   </div>
   <div>
     <template for:each={quotes} for:item="quote">
-      <p key={quote.Id}>{quote.Text}</p>
+      <template if:false={quote.Picture}>
+        <p key={quote.Id}>{quote.Text}</p>
+      </template>
       <template if:true={quote.Picture}>
-        <img key={quote.Id} src={quote.Picture} alt={quote.Text}>
+        <img key={quote.Id} src={quote.PicSrc} alt={quote.Text}>
       </template>
     </template>
   </div>
