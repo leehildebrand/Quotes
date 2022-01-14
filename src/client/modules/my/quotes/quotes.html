@@ -1,7 +1,7 @@
 <template>
     <div class={animationClass} onanimationend={handleAnimationEnd}>
         <template if:true={quote.Picture}>
-            <img alt={quote.Text} src={imageSrc} />
+            <img alt={quote.Text} src={quote.PicSrc} />
         </template>
         <template if:false={quote.Picture}>
             <span class="quote">{quote.Text}</span>
