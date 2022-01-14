@@ -4,6 +4,8 @@ import { getQuotes } from 'data/quoteService';
 
 //since the app has to load, we show a brief message while the quotes are loading
 var quotes = [{ Text: 'Gathering Quotes', Picture: '' }];
+//we will use this to place the values for the current quote
+var currentQuote = {};
 
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
@@ -14,9 +16,12 @@ const SPEED_CLASS_MAP = {
 //TO-DO: make speed configurable in custom metadata
 var DEFAULT_SPEED = 'slow';
 
-var currentQuote = {};
+//we are going to load images from resources folder using these vars
+var imageBaseRoute;
+var imageSrc;
 
 export default class Quote extends LightningElement {
+    imageBaseRoute = '/resources/';
     // Get the quotes
     connectedCallback() {
         getQuotes().then(result => {
@@ -74,7 +79,6 @@ export default class Quote extends LightningElement {
     handleAnimationEnd() {
         this.isAnimating = false;
         this.index = (this.index + 1) % quotes.length;
-
         setTimeout(() => this.updateGreeting(), 500);
     }
 
@@ -85,6 +89,7 @@ export default class Quote extends LightningElement {
 
     handleNext() {
         this.index = (this.index + 1) % quotes.length;
+        this.imageSrc = this.imageBaseRoute + this.quote.Picture;
         console.log(this.index);
     }
 
