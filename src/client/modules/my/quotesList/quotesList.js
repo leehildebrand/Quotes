@@ -5,14 +5,10 @@ import { routeMeTo } from 'my/routerModule';
 
 var quotes = [];
 export default class Quote extends LightningElement {
-    @track quotes = [];
+    quotes = [];
     connectedCallback() {
         getQuotes().then(result => {
-            //add the quotes to the array
             this.quotes = this.allQuotes = result;
-            this.quotes.forEach(element => {
-                quotes.push(element.Text);
-            });
         });
     }
 
