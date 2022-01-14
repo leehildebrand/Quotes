@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import MyApp from 'my/app';
+import MyApp from 'my/spaRouter';
 
 const app = createElement('my-app', { is: MyApp });
 // eslint-disable-next-line @lwc/lwc/no-document-query

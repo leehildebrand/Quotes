@@ -2,8 +2,8 @@ import { LightningElement, api } from 'lwc';
 //make the quotes available to the component
 import { getQuotes } from 'data/quoteService';
 
-//since the app has to load, we show a brief while the quotes are loading
-var quotes = ['Gathering quotes...'];
+//since the app has to load, we show a brief message while the quotes are loading
+var quotes = [{ Text: 'Gathering Quotes', Picture: '' }];
 
 const SPEED_CLASS_MAP = {
     slow: 'fade-slow',
@@ -14,6 +14,8 @@ const SPEED_CLASS_MAP = {
 //TO-DO: make speed configurable in custom metadata
 var DEFAULT_SPEED = 'slow';
 
+var currentQuote = {};
+
 export default class Quote extends LightningElement {
     // Get the quotes
     connectedCallback() {
@@ -23,7 +25,8 @@ export default class Quote extends LightningElement {
             //add the quotes to the array
             this.quotes = this.allQuotes = result;
             this.quotes.forEach(element => {
-                quotes.push(element.Text);
+                currentQuote = { Text: element.Text, Picture: element.Picture };
+                quotes.push(currentQuote);
             });
         });
     }

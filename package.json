@@ -1,9 +1,9 @@
 {
-    "name": "my-expressapp",
-    "description": "My amazing LWC app",
+    "name": "my-quotes",
+    "description": "Things I like to read",
     "version": "0.0.1",
-    "author": "adityanaag3",
-    "bugs": "https://github.com/adityanaag3/my-expressapp/issues",
+    "author": "leehildebrand",
+    "bugs": "https://github.com/leehildebrand/Quotes/issues",
     "dependencies": {
         "compression": "^1.7.4",
         "dotenv": "^10.0.0",
@@ -24,12 +24,7 @@
         "npm": ">=6.4.1",
         "yarn": ">=1.9.4"
     },
-    "homepage": "https://github.com/adityanaag3/my-expressapp",
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
+    "homepage": "https://github.com/leehildebrand/Quotes",
     "keywords": [
         "lwc"
     ],
@@ -53,7 +48,7 @@
         ],
         "exec": "node ./src/server/api.js"
     },
-    "repository": "adityanaag3/my-expressapp",
+    "repository": "leehildebrand/quotes",
     "scripts": {
         "build": "lwc-services --openssl-legacy-provider build -m production",
         "build:development": "lwc-services build",
