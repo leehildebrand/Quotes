@@ -63,7 +63,8 @@ app.get('/api/quotes', (req, res) => {
                 return {
                     Id: quoteRecord.Id,
                     Text: quoteRecord.Text__c,
-                    Picture: quoteRecord.Picture__c
+                    Picture: quoteRecord.Picture__c,
+                    PicSrc: `/resources/${quoteRecord.Picture__c}`
                 };
             });
             res.send({ data: formattedData });
