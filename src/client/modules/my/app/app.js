@@ -3,7 +3,7 @@ import { routeMeTo } from 'my/routerModule';
 
 export default class App extends LightningElement {
     goToList() {
-        routeMeTo('dynamicQuotes');
+        routeMeTo('list');
     }
 }
 ``
