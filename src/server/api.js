@@ -63,7 +63,7 @@ app.get('/api/quotes', (req, res) => {
                 return {
                     Id: quoteRecord.Id,
                     Text: quoteRecord.Quotes__Text__c,
-                    Picture: quoteRecord.Picture__c,
+                    Picture: quoteRecord.Quotes__Picture__c,
                     PicSrc: `/resources/${quoteRecord.Quotes__Picture__c}`
                 };
             });
