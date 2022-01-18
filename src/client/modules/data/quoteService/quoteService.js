@@ -8,6 +8,7 @@ export const getQuotes = () => fetch(URL)
     .then(response => {
         if (!response.ok) {
             // If response was not OK, throw error
+            console.log('response+error', response);
             throw new Error('No response from server');
         }
         return response.json();
