@@ -29,6 +29,7 @@ SF_TOKEN=YOUR_TOKEN
 SF_USERNAME=YOUR_USERNAME
 ```
 If you fork this repo, the `.gitignore` will ignore the `.env` file on check in. Please be careful not to make changes that will commit your credentials to your repository. Use [Config Vars](https://devcenter.heroku.com/articles/config-vars) to check your instance into a PASS.
+
 4. Run `npm watch` to start the app locally
 
 ## Handling pictures
