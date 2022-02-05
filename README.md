@@ -4,7 +4,7 @@ This is a LWC OSS app. It connects to a Salesforce database and shows quotes in 
 
 The app can run locally or on a PASS such as Heroku.
 
-[Demonstration](http://leehildebrand.name/url/quotes)
+[Demonstration](https://lee-favorite-quotes-production.herokuapp.com/?page=home)
 
 ## Run this app yourself
 
